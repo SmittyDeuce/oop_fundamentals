@@ -14,6 +14,40 @@
 # self.owner = owner
 # ```
 # Expected Outcome: Completion of the Vehicle class with the update_owner method and a demonstration script showing the creation of Vehicle objects and updating their owners.
+# 
+
+class Vehicle:
+    def __init__ (self, registration_num, type, owner):
+        self.registration_number = registration_num
+        self.type = type
+        self.owner = owner
+
+    def new_owner(self):
+        updated_owner = input("Who is new Owner: ")
+        self.owner = updated_owner
+
+
+vehicle1 = Vehicle("asfdwer", "truck", "joe")
+
+print("first Owner: ",vehicle1.owner)
+
+vehicle1.new_owner()
+print("2nd Owner: ", vehicle1.owner)
+
+
+vehicle1.new_owner()
+print("3rd Owner: ", vehicle1.owner)
+
+vehicle1.new_owner()
+print("Last Owner: ", vehicle1.owner)
+
+
+
+
+
+
+
+
 # Task 2: Event Management System Enhancement
 
 # Problem Statement: Extend an existing Event class by adding a feature to keep track of the number of participants. Implement a method add_participant that increases the count and a method get_participant_count to retrieve the current count.
