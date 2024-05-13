@@ -29,21 +29,17 @@ class Vehicle:
 
 vehicle1 = Vehicle("asfdwer", "truck", "joe")
 
-print("first Owner: ",vehicle1.owner)
+# print("first Owner: ",vehicle1.owner)
 
-vehicle1.new_owner()
-print("2nd Owner: ", vehicle1.owner)
-
-
-vehicle1.new_owner()
-print("3rd Owner: ", vehicle1.owner)
-
-vehicle1.new_owner()
-print("Last Owner: ", vehicle1.owner)
+# vehicle1.new_owner()
+# print("2nd Owner: ", vehicle1.owner)
 
 
+# vehicle1.new_owner()
+# print("3rd Owner: ", vehicle1.owner)
 
-
+# vehicle1.new_owner()
+# print("Last Owner: ", vehicle1.owner)
 
 
 
@@ -58,6 +54,44 @@ print("Last Owner: ", vehicle1.owner)
 # self.name = name
 # self.date = date
 # ```
+
+class Event:
+    def __init__(self, name, Date):
+        
+        self.name = name
+        self.date = Date
+        self.participant_count = 1 # I made 1 because when declaring lottery as an event I have to pass in a partipant
+        self.participants = [self.name]
+    def add_participant(self):
+       participants = [self.name]
+       while True:
+           participant = input("enter partipant name: (enter 'done' when finished) ")
+           if participant.lower() == 'done':
+               break
+           
+           else:
+               print(f"{participant} added")
+               self.participants.append(participant)
+               self.participant_count += 1
+
+    def get_participant_count(self):
+        return self.participant_count, self.participants
+
+
+
+
+
+# lottery = Event("Mike", "10-3-24")
+
+# lottery.add_participant()
+
+# print(f"Participants: {lottery.get_participant_count()}")
+
+
+
+
+
+
 # 2. Python City Planning Simulator
 # Objective:
 # The aim of this assignment is to solidify understanding of Python's Object-Oriented Programming concepts through the development of a simulated city planning system. This system will integrate the use of classes, objects, inheritance, and file handling to manage various city elements like buildings, traffic systems, and public events.
