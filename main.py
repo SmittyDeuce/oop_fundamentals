@@ -1,3 +1,4 @@
+import os
 # 1. City Infrastructure Management System
 # Objective:
 # The aim of this assignment is to apply the concepts of Object-Oriented Programming in Python to build a simulated City Infrastructure Management System. This system will incorporate classes, objects, methods, and data structures to manage different aspects of a city, such as buildings, traffic, and events.
@@ -108,6 +109,53 @@ class Event:
 # # Methods to save to file and load from file
 # ```
 # Expected Outcome: A complete Building class with methods for saving to and loading details from a file. A script demonstrating saving multiple buildings to a file and then reading them back into the program.
+
+class Buildings:
+    def __init__ (self, name, floors):
+        self.name = name
+        self.floors = int(floors)
+
+    def add_builiding_file(self):
+        while True:
+            building_name = input("Enter building name: (enter 'done' when finished) ")
+            if building_name == 'done':
+                break
+            else:
+                try:
+                    building_floors = int(input("How many floors?: "))
+                except ValueError:
+                    print("Error: floors has to be a number")
+                    continue
+                if not os.path.isfile("buildings.txt"):
+                    with open("buildings.txt", 'w') as file:
+                        file.write(f"{building_name}: {building_floors}\n")
+                else:
+                    with open("buildings.txt", "a") as file:
+                        file.write(f"{building_name}: {building_floors}\n")
+
+
+    def load_building_file(self):
+        file_name = input("enter file name: (include extension) ")
+
+        if os.path.isfile(file_name):
+            with open(file_name, 'r') as file:
+                for line in file:
+                    print(line)
+
+        else:
+            print(f"{file_name} not found try again")
+            
+
+building = Buildings("", 0)
+
+building.add_builiding_file()
+building.load_building_file()
+
+
+
+
+
+
 # 3. City Services Simulation: Python OOP and Modular Design
 # Objective:
 # This assignment aims to strengthen your skills in Python Object-Oriented Programming (OOP) and modular programming by building a simulation of city services. The focus will be on using class variables and organizing code into modules, simulating services like public transportation, park management, and city utilities.
@@ -116,3 +164,9 @@ class Event:
 
 # Problem Statement: Develop a Bus class as part of a public transportation module. Use class variables to represent common attributes like city name and base fare. Implement instance variables for specific attributes like route number and passenger capacity.
 # Expected Outcome: A Bus class with both class and instance variables, and a transportation module to manage different bus routes. A test script should demonstrate creating bus instances and accessing both class and instance attributes.
+
+
+class Bus:
+    def __init__ (self, base_fare, city_name):
+        self.base_fare = base_fare
+        self.city_name = city_name
