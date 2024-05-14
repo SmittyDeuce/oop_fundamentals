@@ -1,4 +1,5 @@
 import os
+import transportation
 # 1. City Infrastructure Management System
 # Objective:
 # The aim of this assignment is to apply the concepts of Object-Oriented Programming in Python to build a simulated City Infrastructure Management System. This system will incorporate classes, objects, methods, and data structures to manage different aspects of a city, such as buildings, traffic, and events.
@@ -148,8 +149,8 @@ class Buildings:
 
 building = Buildings("", 0)
 
-building.add_builiding_file()
-building.load_building_file()
+# building.add_builiding_file()
+# building.load_building_file()
 
 
 
@@ -168,5 +169,18 @@ building.load_building_file()
 
 class Bus:
     def __init__ (self, base_fare, city_name):
-        self.base_fare = base_fare
+        self.base_fare = int(base_fare)
         self.city_name = city_name
+
+
+
+metro = Bus(15, "Hemet")
+greys = Bus(45, "orlando" )
+apple = Bus(100, "New York")
+southern = Bus(5, "McAllen")
+
+transportation.travel_destinations(metro.base_fare, metro.city_name)
+transportation.travel_destinations(greys.base_fare, greys.city_name)
+transportation.travel_destinations(apple.base_fare, apple.city_name)
+transportation.travel_destinations(southern.base_fare, southern.city_name)
+
