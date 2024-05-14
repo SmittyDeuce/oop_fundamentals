@@ -20,16 +20,16 @@ The project consists of a main script (`main.py`) and a `Vehicle` class. The mai
 4. **Output**: The estimated travel fare is displayed to the user.
 
 
-### `main.py`
+# `main.py`
 
 
-# Prompts user for departure and arrival cities.
-# Calculates distance between cities using GeoPy library.
-# Estimates travel fare based on distance and predefined fare structure.
-# Displays estimated travel fare to the user.
+### Prompts user for departure and arrival cities.
+### Calculates distance between cities using GeoPy library.
+### Estimates travel fare based on distance and predefined fare structure.
+### Displays estimated travel fare to the user.
 
 
-### `transportation.py`
+# `transportation.py`
 
-# Defines a Bus class with attributes for base fare and city name.
-# Implements a function to calculate travel fare based on distance.
+### Defines a Bus class with attributes for base fare and city name.
+### Implements a function to calculate travel fare based on distance.
